@@ -1,10 +1,11 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  
-  <!-- Suspense demo component start -->
-  <my-suspense/>
-  <!-- Suspense demo component end -->
-
+  <div>
+    <img alt="Vue logo" src="./assets/logo.png">
+    
+    <!-- Suspense demo component start -->
+    <my-suspense/>
+    <!-- Suspense demo component end -->
+  </div>
 </template>
 
 <script>
