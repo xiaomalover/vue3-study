@@ -37,10 +37,14 @@
   <!-- End multiple v-model:attribute custom event -->
 
   <!-- Start modifiers -->
-  <h3>Handling v-model modifiers</h3>
   <!-- v-model has built-in modifiers - .trim, .number and .lazy -->
-  <my-model-custom-event-modifiers v-model.trim.my_capitalize="testModifiers" />
+  <h3>Handling v-model default 【eg. v-model.trim.my_capitalize="title"】 modifiers</h3>
+  <my-model-default-custom-event-modifier v-model.trim.my_capitalize="testModifiers" />
     Value: {{testModifiers}}; Lenght: {{testModifiers.length}}
+
+  <h3>Handling v-model:attribute 【eg. v-model:title.trim.my_capitalize="title"】 modifiers</h3>
+  <my-model-attribute-custom-event-modifier v-model:testModifiers1.trim.my_capitalize="testModifiers1" />
+    Value: {{testModifiers1}}; Lenght: {{testModifiers1.length}}
   <!-- End modifiers -->
 
 </template>
@@ -50,7 +54,8 @@ import MyCommonCustomEvent from "./components/MyCommonCustomEvent.vue"
 import MyModelDefaultCustomEvent from "./components/MyModelDefaultCustomEvent.vue"
 import MyModelAttributeCustomEvent from "./components/MyModelAttributeCustomEvent.vue"
 import MyModelMultipleAttributeCustomEvent from "./components/MyModelMultipleAttributeCustomEvent.vue"
-import MyModelCustomEventModifiers from "./components/MyModelCustomEventModifier.vue"
+import MyModelDefaultCustomEventModifier from "./components/MyModelDefaultCustomEventModifier.vue"
+import MyModelAttributeCustomEventModifier from "./components/MyModelAttributeCustomEventModifier.vue"
 
 export default {
   name: "App",
@@ -61,6 +66,7 @@ export default {
       firstName: "",
       lastName: "",
       testModifiers: "",
+      testModifiers1: "",
     }
   },
   components: {
@@ -68,7 +74,8 @@ export default {
     MyModelDefaultCustomEvent,
     MyModelAttributeCustomEvent,
     MyModelMultipleAttributeCustomEvent,
-    MyModelCustomEventModifiers,
+    MyModelDefaultCustomEventModifier,
+    MyModelAttributeCustomEventModifier,
   },
   methods: {
     noValidateCallback(event) {
